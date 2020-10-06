@@ -1,0 +1,25 @@
+import org.springframework.data.redis.connection.Message;
+import org.springframework.data.redis.connection.MessageListener;
+
+import javax.annotation.Resource;
+import java.util.Map;
+
+@Service
+public class ExpirationListener implements MessageListener
+{
+    @Resource
+    RedisClient RedisClient;
+
+    @Override
+    public void onMessage(Message message, byte[] pattern) {
+        String key = new String(message.getBody());
+
+        if(처리할 대상만 처리) { 
+            log().info("############################# incoming log::{}",key);
+            // 처리대상중 현재 인스턴스가 처리해야하는거라면?
+            if (val.indexOf(xxxx.getUniqueName()) >= 0) {
+                // 비즈니스 처리
+            }
+        }
+    }
+}
